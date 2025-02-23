@@ -17,7 +17,7 @@ rustflags = [
 ```
 Set environment variables for bindgen, replacing `$SDK_ROOT_DIR` accordingly:
 ```
-$ export BINDGEN_EXTRA_CLANG_ARGS="--sysroot=$SDK_ROOT_DIR/SDK-B288/usr/arm-obreey-linux-gnueabi/sysroot/ -I$SDK_ROOT_DIR/SDK-B288/usr/arm-obreey-linux-gnueabi/sysroot/usr/include/freetype2"
+export BINDGEN_EXTRA_CLANG_ARGS="--sysroot=$SDK_ROOT_DIR/SDK-B288/usr/arm-obreey-linux-gnueabi/sysroot/ -I$SDK_ROOT_DIR/SDK-B288/usr/arm-obreey-linux-gnueabi/sysroot/usr/include/freetype2"
 ```
 ## Building
 For build with debugging info:
@@ -32,5 +32,5 @@ $ RUSTFLAGS="-C link-arg=-s" cargo build --release
 Add inkview as dependency to your Crate.toml:
 ```
 [dependencies]
-inkview = { path = "path/to/inkview", version = "0.1" }
+inkview = { path = "path/to/inkview" }
 ```

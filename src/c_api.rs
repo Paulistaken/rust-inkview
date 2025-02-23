@@ -73,11 +73,16 @@ impl TryFrom<i32> for PanelType {
 
 	fn try_from(value: i32) -> Result<Self, Self::Error> {
 		let value: u32 = value.try_into().unwrap();
-		if value > (PanelType::ENABLED | PanelType::EVENT_NO_HANDLING | PanelType::NO_FB_OFFSET).0 {
+		if value > (PanelType::ENABLED as u32 | PanelType::EVENT_NO_HANDLING as u32 | PanelType::NO_FB_OFFSET as u32) {
 			Err("Invalid panel type value")
 		}
 		else {
-			Ok(PanelType(value))
+			Ok(match value{
+                0=>PanelType::DISABLED,
+                2=>PanelType::ENABLED,
+                4=>PanelType::EVENT_NO_HANDLING,
+                _=>PanelType::NO_FB_OFFSET
+            })
 		}
 	}
 }

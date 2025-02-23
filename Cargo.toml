@@ -1,7 +1,7 @@
 [package]
 name = "inkview"
-version = "0.1.0"
-authors = ["oliver <oliver.haag@gmail.com>"]
+version = "0.1.1"
+authors = ["oliver <oliver.haag@gmail.com>", "paul <skrzypczykpaul.tk@gmail.com>"]
 license = "MIT"
 edition = "2018"
 
@@ -16,7 +16,7 @@ num-derive = "0.2"
 num-traits = "0.2"
 
 [build-dependencies]
-bindgen = "0.51"
+bindgen = "0.62"
 bitflags = "1.0"
 lazy_static = "1.3"
 
